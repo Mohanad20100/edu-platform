@@ -1,0 +1,60 @@
+/* --- 1. تصفير الهوامش الافتراضية وضبط القياسات لكل المتصفحات --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 2. تهيئة نص وخلفية الموقع بالكامل --- */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc; /* لون خلفية هادئ ومريح للعين عند المذاكرة */
+  color: #1e293b; /* لون النصوص الداكن والواضح للقراءة */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* منع ظهور شريط التمرير الأفقي المزعج في الهواتف */
+}
+
+/* --- 3. تأثيرات تفاعلية عامة للروابط والأزرار (Hover Effects) --- */
+a, button {
+  transition: all 0.25s ease-in-out; /* حركة ناعمة عند تمرير الماوس أو الضغط */
+}
+
+a:hover {
+  opacity: 0.9;
+  transform: translateY(-1px); /* حركة خفيفة للأعلى تعطي إحساساً بالتفاعل */
+}
+
+button:active {
+  transform: scale(0.98); /* تأثير ارتداد خفيف عند النقر على الأزرار */
+}
+
+/* --- 4. تحسين شكل الخطوط والقوائم --- */
+ul, ol {
+  list-style: none;
+}
+
+img, iframe {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- 5. تخصيص شريط التمرير الجانبي للموقع (Scrollbar) ليصبح أنيقاً --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
