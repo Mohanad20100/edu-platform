@@ -8,6 +8,7 @@ import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
 import LessonView from './pages/LessonView';
 import Profile from './pages/Profile';
+import Discussion from './pages/Discussion';
 
 export default function App() {
   return (
