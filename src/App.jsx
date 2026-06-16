@@ -42,6 +42,8 @@ export default function App() {
             
             {/* 5. فتح صفحة حساب ومستوى الطالب الأكاديمي */}
             <Route path="/profile" element={<Profile />} />
+           {/* 👇 هنا تضع السطر الجديد تماماً قبل كلمة </Routes> */}
+            <Route path="/discussion" element={<Discussion />} />
           </Routes>
         </main>
 
