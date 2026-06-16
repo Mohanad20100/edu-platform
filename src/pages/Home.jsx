@@ -23,10 +23,8 @@ export default function Home() {
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </div>
-
-        {/* أزرار التنقل السريع */}
-        {/* 🧭 أزرار التنقل السريع */}
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexDirection: 'column', width: '100%' }}>
+{/* 🧭 أزرار التنقل السريع */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexDirection: 'column', width: '100%', marginTop: '20px' }}>
         <Link to="/courses" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="card">📚 تصفح المواد الدراسية</div>
         </Link>
@@ -39,5 +37,5 @@ export default function Home() {
           <div className="card">💬 تصفح مجتمعات النقاش</div>
         </Link>
       </div>
-  );
+        
 }
