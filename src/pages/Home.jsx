@@ -36,6 +36,9 @@ export default function Home() {
         <Link to="/discussion" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="card">💬 تصفح مجتمعات النقاش</div>
         </Link>
-      </div>
         
+  </div>
+  );
 }
+        
+
