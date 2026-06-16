@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+// 👇 قمنا بجلب نفس الصورة الاحترافية الموجودة في صفحتك الرئيسية
+import projectCapture from '../project-capture.png'; 
 
 export default function Discussion() {
-  // بيانات تجريبية لأسئلة الطلاب والإجابات لتبدأ بها الصفحة
   const [questions, setQuestions] = useState([
     {
       id: 1,
@@ -11,18 +12,45 @@ export default function Discussion() {
       answers: [
         { id: 101, teacher: "مستر محمود", text: "أهلاً يا أحمد، ركز جيداً على مفردات الوحدتين الأولى والثانية وخاصة الكلمات المتعلقة بالتكنولوجيا والتعليم." }
       ]
-    },
-    {
-      id: 2,
-      student: "سارة محمد",
-      question: "هل يوجد مراجعة شاملة لدرس حضارة بلاد العراق القديم في التاريخ؟",
-      date: "منذ 5 ساعات",
-      answers: [] // سؤال بدون إجابة حتى الآن
     }
   ]);
 
-  // متغيرات لحفظ النص الجديد الذي يكتبه الطالب
   const [newQuestion, setNewQuestion] = useState("");
+  const [studentName, setStudentName] = useState("");
+
+  const handleAddQuestion = (e) => {
+    e.preventDefault();
+    if (!newQuestion.trim() || !studentName.trim()) return;
+
+    const newQ = {
+      id: Date.now(),
+      student: studentName,
+      question: newQuestion,
+      date: "الآن",
+      answers: []
+    };
+
+    setQuestions([newQ, ...questions]);
+    setNewQuestion("");
+    setStudentName("");
+  };
+
+  return (
+    <div style={styles.container}>
+      <header style={styles.header}>
+        
+        {/* 👇 هذا هو كود عرض الصورة بشكل احترافي ومنظم تلقائياً */}
+        <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto 20px auto' }}>
+          <img 
+            src={projectCapture} 
+            alt="مناقشة الطلاب" 
+            style={{ width: '100%', height: 'auto', borderRadius: '12px' }} 
+          />
+        </div>
+
+        <h1 style={styles.title}>💬 ساحة مناقشة أسئلة الطلاب</h1>
+        <p style={styles.subtitle}>اطرح سؤالك الدراسي وشارك الإجابات مع زملائك والمعلمين</p>
+      </header>
   const [studentName, setStudentName] = useState("");
 
   // دالة لإضافة سؤال جديد للمناقشة
