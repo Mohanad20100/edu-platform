@@ -25,19 +25,19 @@ export default function Home() {
         </div>
 
         {/* أزرار التنقل السريع */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
-          <Link to="/courses" style={{ background: '#2563eb', color: 'white', textDecoration: 'none', padding: '12px 28px', borderRadius: '10px', fontWeight: '600', fontSize: '1rem' }}>
-            تصفح المواد الدراسية 📚
-          </Link>
-          <Link to="/profile" style={{ background: 'white', color: '#2563eb', border: '1px solid #cbd5e1', textDecoration: 'none', padding: '12px 28px', borderRadius: '10px', fontWeight: '600', fontSize: '1rem' }}>
-            الملف الشخصي 👤
-          </Link>
-          <Link to="/discussion" style={{ textDecoration: 'none', color: 'inherit', width: '100%' }}>
-  {/* كود الزر الحالي الخاص بمجتمعات النقاش يظل هنا بالداخل كما هو */}
-          </Link>
-        </div>
-      </div>
+        {/* 🧭 أزرار التنقل السريع */}
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', flexDirection: 'column', width: '100%' }}>
+        <Link to="/courses" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="card">📚 تصفح المواد الدراسية</div>
+        </Link>
 
-    </div>
+        <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="card">👤 الملف الشخصي</div>
+        </Link>
+
+        <Link to="/discussion" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="card">💬 تصفح مجتمعات النقاش</div>
+        </Link>
+      </div>
   );
 }
