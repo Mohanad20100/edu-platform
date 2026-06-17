@@ -23,8 +23,8 @@ export default function Home() {
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </div>
-      </div>
+      </div> {/* 👈 تم إغلاق صندوق الترحيب هنا */}
 
-    </div>
+    </div> {/* 👈 تم إغلاق الصندوق الرئيسي للملف هنا */}
   );
 }
