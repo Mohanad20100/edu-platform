@@ -23,8 +23,6 @@ export default function Home() {
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </div>
-      </div>
-
     </div>
   );
 }
