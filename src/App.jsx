@@ -21,6 +21,7 @@ export default function App() {
           <nav style={{ display: 'flex', gap: '15px' }}>
             <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: '600', padding: '6px 12px', borderRadius: '4px', background: 'rgba(255,255,255,0.1)' }}>الرئيسية</Link>
             <Link to="/courses" style={{ color: 'white', textDecoration: 'none', fontWeight: '600', padding: '6px 12px' }}>المواد الدراسية</Link>
+            <Link to="/discussion" style={{ color: 'white', textDecoration: 'none', fontWeight: '600', padding: '6px 12px' }}>مجتمعات النقاش</Link>
             <Link to="/profile" style={{ color: 'white', textDecoration: 'none', fontWeight: '600', padding: '6px 12px' }}>الملف الشخصي</Link>
           </nav>
         </header>
@@ -43,7 +44,7 @@ export default function App() {
             {/* 5. فتح صفحة حساب ومستوى الطالب الأكاديمي */}
             <Route path="/profile" element={<Profile />} />
             
-            {/* 6. 👇 هنا تضع السطر الجديد تماماً قبل كلمة */}
+            {/* 6. فتح صفحة مجتمعات النقاش */}
             <Route path="/discussion" element={<Discussion />} />
           </Routes>
         </main>
