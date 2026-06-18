@@ -1,11 +1,12 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
+import Assignments from './Assignments'; // 📥 استدعاء لوحة الواجبات المجمعة (لأنها في نفس المجلد)
 
 export default function Home() {
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', padding: '20px 10px', textAlign: 'center' }}>
       
-      {/* قسم الترحيب الرئيسي */}
+      {/* قسم الترحيب الرئيسي المعتاد في موقعك */}
       <div style={{ background: '#f1f5f9', padding: '40px 20px', borderRadius: '24px', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2.2rem', color: '#1e3a8a', fontWeight: 'bold', margin: '0 0 10px 0' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
@@ -23,6 +24,13 @@ export default function Home() {
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </div>
+      </div>
+
+      <hr style={{ border: '0', height: '1px', background: '#e2e8f0', margin: '40px 0' }} />
+
+      {/* 🔥 الجزء الجديد: استدعاء لوحة الواجبات لتعرض بتبويباتها الثلاثة بالأسفل مباشرة */}
+      <div style={{ textAlign: 'right' }}>
+        <Assignments />
       </div>
 
     </div>
