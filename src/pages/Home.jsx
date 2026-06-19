@@ -5,6 +5,36 @@ import videoData from '../data.json';
 
 export default function Home() {
   return (
+    {/* قسم الفيديوهات الترحيبية والتحفيزية */}
+<div style={{ marginTop: '40px', direction: 'rtl' }}>
+  <h2 style={{ fontSize: '1.8rem', color: '#1a1a1a', marginBottom: '20px' }}>🎥 فيديوهات تحفيزية للبداية</h2>
+  
+  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+    {videoData.map((video) => {
+      // تحويل رابط يوتيوب العادي إلى رابط embed ليشتغل داخل الموقع دون مشاكل
+      const embedUrl = video.url.replace("watch?v=", "embed/");
+
+      return (
+        <div key={video.id} style={{ border: '1px solid #e0e0e0', borderRadius: '12px', padding: '15px', width: '320px', background: '#ffffff', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#333' }}>{video.title}</h3>
+          
+          {/* حاوية الفيديو لجعلها متجاوبة مع الشاشات */}
+          <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px' }}>
+            <iframe
+              style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
+              src={embedUrl}
+              title={video.title}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '10px', lineHeight: '1.4' }}>{video.description}</p>
+        </div>
+      );
+    })}
+  </div>
+</div>
     <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', padding: '20px 10px', textAlign: 'center' }}>
       
       {/* 1. قسم الترحيب الرئيسي المعتاد */}
