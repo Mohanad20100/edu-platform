@@ -1,7 +1,8 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
 import Assignments from './Assignments'; 
-import videoData from './data.json';
+import videoData from '../data.json';
+
 export default function Home() {
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', fontFamily: 'system-ui, sans-serif', padding: '20px 10px', textAlign: 'center' }}>
