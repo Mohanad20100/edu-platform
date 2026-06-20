@@ -34,12 +34,11 @@ export default function Home() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center' }}>
           {videoData.map((video) => {
-            
-            // طريقة احترافية وصارمة لاستخراج الـ ID الخاص بالفيديو من الرابط بشكل صحيح
+            // استخراج كود الفيديو لعرض صورة الغلاف الرسمية بتاعته من يوتيوب
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             const match = video.url.match(regExp);
             const videoId = (match && match[2].length === 11) ? match[2] : null;
-            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
             return (
               <div 
@@ -50,31 +49,38 @@ export default function Home() {
                   padding: '15px', 
                   width: '300px', 
                   background: '#ffffff', 
-                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' 
+                  boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'between'
                 }}
               >
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', color: '#1e293b', height: '45px', overflow: 'hidden' }}>
                   {video.title}
                 </h3>
                 
-                <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
-                  {videoId ? (
-                    <iframe
-                      style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
-                      src={embedUrl}
-                      title={video.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <p style={{ color: 'red', padding: '20px', textAlign: 'center' }}>الرابط غير صحيح</p>
-                  )}
-                </div>
+                {/* عرض صورة غلاف الفيديو مع زر تشغيل وهمي بديل الـ iframe المقفول */}
+                <a href={video.url} target="_blank" rel="noopener noreferrer" style={{ position: 'relative', display: 'block', borderRadius: '8px', overflow: 'hidden', cursor: 'pointer' }}>
+                  <img src={thumbnailUrl} alt={video.title} style={{ width: '100%', display: 'block', borderRadius: '8px' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ background: '#ff0000', color: '#fff', borderRadius: '50%', width: '50px', height: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', boxShadow: '0 4px 10px rgba(0,0,0,0.3)' }}>
+                      ▶
+                    </div>
+                  </div>
+                </a>
                 
-                <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>
+                <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5', flexGrow: 1 }}>
                   {video.description}
                 </p>
+
+                <a 
+                  href={video.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  style={{ display: 'block', textAlign: 'center', background: '#0070f3', color: '#fff', padding: '10px', borderRadius: '8px', textDecoration: 'none', fontWeight: 'bold', marginTop: '15px', transition: '0.2s' }}
+                >
+                  اضغط لمشاهدة الفيديو 📺
+                </a>
               </div>
             );
           })}
@@ -88,4 +94,4 @@ export default function Home() {
 
     </div>
   );
-              }
+}
