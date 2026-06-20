@@ -3,20 +3,20 @@ import projectCapture from '../assets/project-capture.png';
 import Assignments from './Assignments';
 
 export default function Home() {
-  // روابط فيديوهات أنيميشن تعليمية مباشرة من الأرشيف الدولي - صامتة ومتناسقة جداً مع الدراسة
+  // روابط فيديوهات يوتيوب تعليمية وتحفيزية حقيقية ومضمونة ومفتوحة للتضمين 100%
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      // فيديو أنيميشن رائع لشخص يخطط ويدرس بذكاء
-      url: "https://archive.org/download/calm-studying-animation/calm%20studying%20animation.mp4",
+      // فيديو تحفيزي وإرشادي ممتاز عن تنظيم الوقت للدراسة
+      url: "https://www.youtube.com/embed/iSX8Fm_I_vA",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      // فيديو تعليمي كرتوني عن التركيز في الدراسة
-      url: "https://archive.org/download/rhythm-of-study/rhythm%20of%20study.mp4",
+      // فيديو رائع عن طرق المذاكرة الفعالة والذكية والتركيز
+      url: "https://www.youtube.com/embed/2_YI69OAm_A",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
@@ -43,7 +43,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات التعليمية المباشرة جوه المنصة */}
+      {/* 3. قسم الفيديوهات التعليمية جوه المنصة */}
       <div style={{ marginTop: '50px', direction: 'rtl', borderTop: '2px solid #f1f5f9', paddingTop: '30px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -67,16 +67,16 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل الفيديو الأصلي المباشر */}
-                <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
-                  <video 
-                    src={video.url} 
-                    controls 
-                    preload="metadata"
-                    style={{ width: '100%', display: 'block' }}
-                  >
-                    متصفحك لا يدعم تشغيل الفيديو.
-                  </video>
+                {/* مشغل يوتيوب الرسمي السليم */}
+                <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
+                  <iframe
+                    style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
+                    src={video.url}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>
@@ -95,4 +95,4 @@ export default function Home() {
 
     </div>
   );
-}
+                  }
