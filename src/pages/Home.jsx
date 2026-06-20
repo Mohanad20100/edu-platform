@@ -34,7 +34,12 @@ export default function Home() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center' }}>
           {videoData.map((video) => {
-            const embedUrl = video.url.replace("watch?v=", "embed/");
+            
+            // طريقة احترافية وصارمة لاستخراج الـ ID الخاص بالفيديو من الرابط بشكل صحيح
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            const match = video.url.match(regExp);
+            const videoId = (match && match[2].length === 11) ? match[2] : null;
+            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
             return (
               <div 
@@ -53,14 +58,18 @@ export default function Home() {
                 </h3>
                 
                 <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
-                  <iframe
-                    style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
-                    src={embedUrl}
-                    title={video.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  {videoId ? (
+                    <iframe
+                      style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
+                      src={embedUrl}
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <p style={{ color: 'red', padding: '20px', textAlign: 'center' }}>الرابط غير صحيح</p>
+                  )}
                 </div>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>
@@ -79,4 +88,4 @@ export default function Home() {
 
     </div>
   );
-}
+              }
