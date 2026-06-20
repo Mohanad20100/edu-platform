@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات الترحيبية والتحفيزية جوه المنصة */}
+      {/* 3. قسم الفيديوهات الترحيبية المباشرة جوه المنصة */}
       <div style={{ marginTop: '50px', direction: 'rtl', borderTop: '2px solid #f1f5f9', paddingTop: '30px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -34,12 +34,6 @@ export default function Home() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center' }}>
           {videoData.map((video) => {
-            // استخراج الـ ID بدقة وتحويله لرابط embed للتشغيل الداخلي
-            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-            const match = video.url.match(regExp);
-            const videoId = (match && match[2].length === 11) ? match[2] : null;
-            const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-
             return (
               <div 
                 key={video.id} 
@@ -56,20 +50,15 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل الفيديو الداخلي */}
-                <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
-                  {videoId ? (
-                    <iframe
-                      style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
-                      src={embedUrl}
-                      title={video.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <p style={{ color: 'red', padding: '20px', textAlign: 'center' }}>الرابط غير صحيح</p>
-                  )}
+                {/* مشغل الفيديو الداخلي الأصلي - مستحيل يتم حظره */}
+                <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
+                  <video 
+                    src={video.url} 
+                    controls 
+                    style={{ width: '100%', display: 'block' }}
+                  >
+                    متصفحك لا يدعم تشغيل الفيديو.
+                  </video>
                 </div>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>
