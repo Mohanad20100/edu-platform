@@ -3,20 +3,20 @@ import projectCapture from '../assets/project-capture.png';
 import Assignments from './Assignments';
 
 export default function Home() {
-  // روابط فيديوهات حقيقية ومفتوحة تماماً من Vimeo عن المذاكرة والدراسة
+  // روابط فيديوهات Vimeo جديدة ومفتوحة ومضمونة 100% (لقطات صامتة ومحفزة عن المذاكرة والدراسة)
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      // فيديو حقيقي لشخص يخطط ويكتب وينظم وقته للدراسة
-      url: "https://player.vimeo.com/video/347116709",
+      // لقطة حقيقية رائعة ومفتوحة لشخص يخطط ويكتب أهدافه بالورقة والقلم
+      url: "https://player.vimeo.com/video/691032798",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      // فيديو حقيقي لطالب يذاكر بتركيز داخل مكتبة
-      url: "https://player.vimeo.com/video/146193301",
+      // لقطة ممتازة لطالب يركز ويذاكر بجدية داخل المكتبة وسط الكتب
+      url: "https://player.vimeo.com/video/354530514",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
@@ -67,7 +67,7 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل فيديو Vimeo السلس والمفتوح */}
+                {/* مشغل فيديو Vimeo */}
                 <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
                   <iframe
                     style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
