@@ -3,19 +3,19 @@ import projectCapture from '../assets/project-capture.png';
 import Assignments from './Assignments';
 
 export default function Home() {
-  // روابط فيديوهات حقيقية ومباشرة ومفتوحة متوافقة مع المحتوى التعليمي
+  // روابط فيديوهات حقيقية ومباشرة (تنتهي بـ mp4) وليها علاقة بالدراسة والمذاكرة
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      url: "https://vjs.zencdn.net/v/oceans.mp4",
+      url: "https://v.ftcdn.net/05/57/27/95/700_F_557279574_8wR9E4YshSby66L0YnI0vHjN2SWhh86O_ST.mp4",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      url: "https://www.w3schools.com/html/mov_bbb.mp4",
-      description: "استراتيجيات علمية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
+      url: "https://v.ftcdn.net/07/92/74/61/700_F_792746194_M9Z8h0hH2U7l9rS08Xf9pC9QYVjK1w23_ST.mp4",
+      description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
 
@@ -41,7 +41,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات الترحيبية المباشرة جوه المنصة */}
+      {/* 3. قسم الفيديوهات التعليمية المباشرة */}
       <div style={{ marginTop: '50px', direction: 'rtl', borderTop: '2px solid #f1f5f9', paddingTop: '30px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -65,7 +65,7 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل الفيديو الداخلي المفتوح */}
+                {/* مشغل الفيديو المباشر */}
                 <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
                   <video 
                     src={video.url} 
