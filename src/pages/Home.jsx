@@ -1,8 +1,8 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
-import Assignments from './Assignments';
 
 export default function Home() {
+  // روابط فيديوهات يوتيوب التعليمية الرسمية (عربية وشغالة تمام)
   const videoData = [
     {
       id: 1,
@@ -21,16 +21,22 @@ export default function Home() {
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', direction: 'rtl', fontFamily: 'Arial, sans-serif' }}>
       
+      {/* 1. قسم الترحيب الرئيسي */}
       <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
         </h1>
+        <p style={{ color: '#475569', fontSize: '1.2rem' }}>
+          مكانك الأول لتلقي الشروحات المبسطة ومتابعة تقدمك الدراسي بكل سهولة وإتقان.
+        </p>
       </div>
 
+      {/* 2. عرض الصورة الترحيبية */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <img src={projectCapture} alt="معاينة" style={{ width: '100%', maxWidth: '600px', borderRadius: '12px' }} />
       </div>
 
+      {/* 3. قسم الفيديوهات التعليمية */}
       <div style={{ marginTop: '50px', textAlign: 'center' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -56,8 +62,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ marginTop: '50px' }}>
-        <Assignments />
+      {/* 4. قسم الواجبات المدمج داخلياً لمنع الأخطاء */}
+      <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+        <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
+          📝 قـسـم الـواجبـات والـتدريـبـات
+        </h2>
+        <p style={{ textDecoration: 'center', color: '#64748b' }}>جاهز لاستقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
       </div>
 
     </div>
