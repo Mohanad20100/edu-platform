@@ -3,20 +3,20 @@ import projectCapture from '../assets/project-capture.png';
 import Assignments from './Assignments';
 
 export default function Home() {
-  // روابط فيديوهات حقيقية ومفتوحة 100% ومطابقة تماماً لأجواء الدراسة والمكتبة والتخطيط
+  // روابط فيديوهات حقيقية ومفتوحة تماماً من Vimeo عن المذاكرة والدراسة
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      // فيديو حقيقي لشخص يخطط ويقرأ في كتاب بالمكتبة
-      url: "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c5/A_student_reading_a_book_in_a_library.webm/A_student_reading_a_book_in_a_library.webm.360p.vp9.webm",
+      // فيديو حقيقي لشخص يخطط ويكتب وينظم وقته للدراسة
+      url: "https://player.vimeo.com/video/347116709",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      // فيديو حقيقي لطالب يركز ويذاكر ويكتب ملاحظاته
-      url: "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d7/Student_studying_at_home_01.webm/Student_studying_at_home_01.webm.480p.vp9.webm",
+      // فيديو حقيقي لطالب يذاكر بتركيز داخل مكتبة
+      url: "https://player.vimeo.com/video/146193301",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
@@ -43,7 +43,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات التعليمية المباشرة */}
+      {/* 3. قسم الفيديوهات التعليمية جوه المنصة */}
       <div style={{ marginTop: '50px', direction: 'rtl', borderTop: '2px solid #f1f5f9', paddingTop: '30px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -67,15 +67,16 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل الفيديو المباشر */}
-                <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
-                  <video 
-                    src={video.url} 
-                    controls 
-                    style={{ width: '100%', display: 'block' }}
-                  >
-                    متصفحك لا يدعم تشغيل الفيديو.
-                  </video>
+                {/* مشغل فيديو Vimeo السلس والمفتوح */}
+                <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
+                  <iframe
+                    style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
+                    src={video.url}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>
