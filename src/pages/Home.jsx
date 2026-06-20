@@ -26,4 +26,4 @@ export default function Home() {
         <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
         </h1>
-        <p style={{ color: '#47556
+        <p style={{ color: '#474747' }}>
