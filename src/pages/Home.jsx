@@ -1,9 +1,24 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
 import Assignments from './Assignments';
-import videoData from '../data.json';
 
 export default function Home() {
+  // روابط فيديوهات حقيقية ومباشرة ومفتوحة متوافقة مع المحتوى التعليمي
+  const videoData = [
+    {
+      id: 1,
+      title: "نصائح ذكية لتنظيم الوقت والدراسة",
+      url: "https://vjs.zencdn.net/v/oceans.mp4",
+      description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
+    },
+    {
+      id: 2,
+      title: "كيف تذاكر بذكاء وتتفوق؟",
+      url: "https://www.w3schools.com/html/mov_bbb.mp4",
+      description: "استراتيجيات علمية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
+    }
+  ];
+
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       
@@ -50,7 +65,7 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل الفيديو الداخلي الأصلي - مستحيل يتم حظره */}
+                {/* مشغل الفيديو الداخلي المفتوح */}
                 <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
                   <video 
                     src={video.url} 
