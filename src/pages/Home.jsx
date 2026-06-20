@@ -3,20 +3,20 @@ import projectCapture from '../assets/project-capture.png';
 import Assignments from './Assignments';
 
 export default function Home() {
-  // روابط فيديوهات يوتيوب تعليمية وتحفيزية حقيقية ومضمونة ومفتوحة للتضمين 100%
+  // روابط فيديوهات يوتيوب تعليمية عربية رسمية مفتوحة للتضمين 100%
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      // فيديو تحفيزي وإرشادي ممتاز عن تنظيم الوقت للدراسة
-      url: "https://www.youtube.com/embed/iSX8Fm_I_vA",
+      // فيديو رسمي ممتاز ومفتوح عن تنظيم الوقت
+      url: "https://www.youtube.com/embed/S7gI8N_9z38",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      // فيديو رائع عن طرق المذاكرة الفعالة والذكية والتركيز
-      url: "https://www.youtube.com/embed/2_YI69OAm_A",
+      // فيديو رسمي عن التخلص من التشتت والمذاكرة بذكاء
+      url: "https://www.youtube.com/embed/7V-p2rG_X_E",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
@@ -67,7 +67,7 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* مشغل يوتيوب الرسمي السليم */}
+                {/* مشغل يوتيوب المفتوح */}
                 <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
                   <iframe
                     style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
@@ -95,4 +95,4 @@ export default function Home() {
 
     </div>
   );
-                  }
+                }
