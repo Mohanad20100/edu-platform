@@ -1,24 +1,24 @@
 import React from 'react';
 
 const Home = () => {
-  // مصفوفة الفيديوهات التعليمية والتحفيزية الخاصة بالمنصة
+  // مصفوفة الفيديوهات التعليمية والتحفيزية المحدثة بروابط تشغيل مباشرة ومستقرة
   const videos = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-student-watching-an-online-course-on-a-laptop-42994-large.mp4",
+      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-girl-studying-with-a-laptop-and-notebook-42475-large.mp4",
+      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية."
     },
     {
       id: 3,
       title: "فيديو تحفيزي رائع: لا تستسلم واصنع مستقبلك",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-writing-on-a-notebook-42473-large.mp4",
+      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
       description: "جرعة تحفيزية قوية للطلاب لتجديد الشغف والطاقة والمثابرة نحو النجاح."
     }
   ];
@@ -45,10 +45,11 @@ const Home = () => {
           {videos.map((video) => (
             <div key={video.id} style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
               
-              {/* مشغل الفيديو */}
+              {/* مشغل الفيديو مع إضافة خاصية preload لتسريع التحميل */}
               <video 
                 src={video.url} 
                 controls 
+                preload="metadata"
                 style={{ width: '100%', height: '200px', objectFit: 'cover', backgroundColor: '#000' }}
               />
               
