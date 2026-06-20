@@ -1,5 +1,5 @@
 import React from 'react';
-import projectCapture from '../assets/project-capture'; // تأكد من صحة مسار وامتداد هذا الملف إذا واجهت مشكلة
+import projectCapture from '../assets/project-capture.png'; 
 import Assignments from './Assignments';
 import videoData from '../data.json';
 
@@ -34,7 +34,6 @@ export default function Home() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center' }}>
           {videoData.map((video) => {
-            // تحويل رابط يوتيوب العادي إلى رابط embed ليشتغل داخل الـ iframe بدون مشاكل
             const embedUrl = video.url.replace("watch?v=", "embed/");
 
             return (
@@ -53,7 +52,6 @@ export default function Home() {
                   {video.title}
                 </h3>
                 
-                {/* حاوية الفيديو لجعله متجاوباً ومتناسقاً (Aspect Ratio 16:9) */}
                 <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
                   <iframe
                     style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
