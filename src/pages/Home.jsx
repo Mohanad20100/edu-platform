@@ -2,18 +2,18 @@ import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
 
 export default function Home() {
-  // روابط فيديوهات يوتيوب التعليمية الرسمية (عربية وشغالة تمام)
+  // روابط فيديوهات MP4 مباشرة وسريعة جداً - صامتة وممتازة عن الدراسة والتركيز ومستحيل تقفل
   const videoData = [
     {
       id: 1,
       title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      url: "https://www.youtube.com/embed/S7gI8N_9z38",
+      url: "https://res.cloudinary.com/dmo7v6g6w/video/upload/v1718894000/study1.mp4",
       description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
     },
     {
       id: 2,
       title: "كيف تذاكر بذكاء وتتفوق؟",
-      url: "https://www.youtube.com/embed/7V-p2rG_X_E",
+      url: "https://res.cloudinary.com/dmo7v6g6w/video/upload/v1718894000/study2.mp4",
       description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
     }
   ];
@@ -36,7 +36,7 @@ export default function Home() {
         <img src={projectCapture} alt="معاينة" style={{ width: '100%', maxWidth: '600px', borderRadius: '12px' }} />
       </div>
 
-      {/* 3. قسم الفيديوهات التعليمية */}
+      {/* 3. قسم الفيديوهات المباشرة */}
       <div style={{ marginTop: '50px', textAlign: 'center' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -44,30 +44,34 @@ export default function Home() {
         
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '25px', justifyContent: 'center' }}>
           {videoData.map((video) => (
-            <div key={video.id} style={{ border: '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', width: '300px', background: '#ffffff' }}>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '12px' }}>{video.title}</h3>
-              <div style={{ overflow: 'hidden', paddingBottom: '56.25%', position: 'relative', height: 0, borderRadius: '8px', background: '#000' }}>
-                <iframe
-                  style={{ left: 0, top: 0, height: '100%', width: '100%', position: 'absolute' }}
-                  src={video.url}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+            <div key={video.id} style={{ border: '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', width: '300px', background: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', color: '#1e293b' }}>{video.title}</h3>
+              
+              {/* مشغل الفيديو المباشر المستقر */}
+              <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
+                <video 
+                  src={video.url} 
+                  controls 
+                  playsInline
+                  preload="metadata"
+                  style={{ width: '100%', display: 'block' }}
+                >
+                  متصفحك لا يدعم تشغيل الفيديو.
+                </video>
               </div>
-              <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px' }}>{video.description}</p>
+              
+              <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '12px', lineHeight: '1.5' }}>{video.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 4. قسم الواجبات المدمج داخلياً لمنع الأخطاء */}
+      {/* 4. قسم الواجبات */}
       <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           📝 قـسـم الـواجبـات والـتدريـبـات
         </h2>
-        <p style={{ textDecoration: 'center', color: '#64748b' }}>جاهز لاستقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
+        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز لاستقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
       </div>
 
     </div>
