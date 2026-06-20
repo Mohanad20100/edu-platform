@@ -3,7 +3,6 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 // 📥 استدعاء الصفحات الخمس المنفصلة من مجلدهاpages بنفس الحروف الظاهرة في مستودعك
-import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
 import LessonView from './pages/LessonView';
