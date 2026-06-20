@@ -1,7 +1,8 @@
 import React from 'react';
+import projectCapture from '../assets/project-capture.png'; 
 
 export default function Home() {
-  // روابط فيديوهات MP4 مباشرة وسريعة - صامتة وخاصة بالدراسة والتركيز ومستحيل تقفل
+  // فيديوهات MP4 مباشرة سريعة ومضمونة ومستحيل تقفل أو تقول غير متاح
   const videoData = [
     {
       id: 1,
@@ -30,16 +31,16 @@ export default function Home() {
         </p>
       </div>
 
-      {/* 2. عرض الصورة الترحيبية برابط مباشر آمن */}
+      {/* 2. عرض الصورة الترحيبية (رجعناها عشان نمنع خطأ 500) */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <img 
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&auto=format&fit=crop&q=60" 
-          alt="معاينة التعليم" 
+          src={projectCapture} 
+          alt="معاينة" 
           style={{ width: '100%', maxWidth: '600px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} 
         />
       </div>
 
-      {/* 3. قسم الفيديوهات المباشرة المستقرة */}
+      {/* 3. قسم الفيديوهات المباشرة */}
       <div style={{ marginTop: '50px', textAlign: 'center' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -50,6 +51,7 @@ export default function Home() {
             <div key={video.id} style={{ border: '1px solid #e2e8f0', borderRadius: '12px', padding: '15px', width: '300px', background: '#ffffff', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '12px', color: '#1e293b' }}>{video.title}</h3>
               
+              {/* مشغل MP4 الأصلي المستقر */}
               <div style={{ borderRadius: '8px', overflow: 'hidden', background: '#000' }}>
                 <video 
                   src={video.url} 
@@ -68,14 +70,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 4. قسم الواجبات والتدريبات المدمج */}
+      {/* 4. قسم الواجبات المدمج */}
       <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
           📝 قـسـم الـواجبـات والـتدريـبـات
         </h2>
-        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز لاستقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
+        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز استقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
       </div>
 
     </div>
   );
-}
+              }
