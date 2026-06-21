@@ -1,64 +1,76 @@
 import React from 'react';
+import projectCapture from '../assets/project-capture.png'; 
+// 📥 استدعاء بيانات الفيديوهات الترحيبية من ملف الـ JSON داخل مجلد data
+import videoData from './data/videos.json';
 
-const Home = () => {
-  // مصفوفة الفيديوهات التعليمية والتحفيزية المحدثة بروابط تشغيل مباشرة ومستقرة
-  const videos = [
-    {
-      id: 1,
-      title: "نصائح ذكية لتنظيم الوقت والدراسة",
-      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      description: "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
-    },
-    {
-      id: 2,
-      title: "كيف تذاكر بذكاء وتتفوق؟",
-      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
-      description: "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية."
-    },
-    {
-      id: 3,
-      title: "فيديو تحفيزي رائع: لا تستسلم واصنع مستقبلك",
-      url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
-      description: "جرعة تحفيزية قوية للطلاب لتجديد الشغف والطاقة والمثابرة نحو النجاح."
-    }
-  ];
-
+export default function Home() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', direction: 'rtl', maxWidth: '1200px', margin: '0 auto' }}>
-      {/* الجزء العلوي - الترحيب بالطلاب */}
-      <header style={{ textAlign: 'center', marginBottom: '40px', backgroundColor: '#f5f7fa', padding: '30px', borderRadius: '12px' }}>
-        <h1 style={{ color: '#1e293b', fontSize: '2.5rem', marginBottom: '10px' }}>
-          في منصتك التعليمية المتكاملة
+    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', direction: 'rtl', fontFamily: 'Arial, sans-serif' }}>
+      
+      {/* 1. قسم الترحيب الرئيسي */}
+      <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
+        <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
+          مرحباً بك في منصتك التعليمية المتكاملة 🎓
         </h1>
-        <p style={{ color: '#474747', fontSize: '1.2rem', margin: '0' }}>
-          أهلاً بكم في العام الدراسي الجديد! نساعدكم على تحقيق التفوق والنجاح من خلال محتوى متميز.
+        <p style={{ color: '#475569', fontSize: '1.2rem' }}>
+          مكانك الأول لتلقي الشروحات المبسطة ومتابعة تقدمك الدراسي بكل سهولة وإتقان.
         </p>
-      </header>
+      </div>
 
-      {/* قسم الفيديوهات */}
-      <main>
-        <h2 style={{ color: '#0f172a', marginBottom: '20px', borderBottom: '2px solid #e2e8f0', paddingBottom: '10px' }}>
-          الفيديوهات الإرشادية والتحفيزية
+      {/* 2. عرض الصورة الترحيبية */}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
+        <img 
+          src={projectCapture} 
+          alt="معاينة" 
+          style={{ width: '100%', maxWidth: '600px', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} 
+        />
+      </div>
+
+      {/* 3. قسم الفيديوهات المباشرة المجلوبة من ملف الـ JSON */}
+      <div style={{ marginTop: '50px' }}>
+        <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '25px', textAlign: 'center' }}>
+          🎥 فيديوهات تحفيزية وإرشادية للبداية
         </h2>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px' }}>
-          {videos.map((video) => (
-            <div key={video.id} style={{ backgroundColor: '#fff', border: '1px solid #e2e8f0', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.1)' }}>
-              
-              {/* مشغل الفيديو مع إضافة خاصية preload لتسريع التحميل */}
-              <video 
-                src={video.url} 
-                controls 
-                preload="metadata"
-                style={{ width: '100%', height: '200px', objectFit: 'cover', backgroundColor: '#000' }}
-              />
-              
-              {/* تفاصيل الفيديو */}
-              <div style={{ padding: '15px' }}>
-                <h3 style={{ color: '#1e293b', fontSize: '1.2rem', marginTop: '0', marginBottom: '10px' }}>
+        {/* الحاوية الرئيسية للكروت */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center', padding: '10px' }}>
+          {videoData.map((video) => (
+            
+            /* 📦 كارت الفيديو المنفصل */
+            <div 
+              key={video.id} 
+              style={{ 
+                border: '1px solid #e2e8f0', 
+                borderRadius: '16px', 
+                padding: '0', 
+                width: '320px', 
+                background: '#ffffff', 
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              {/* أ) مشغل الفيديو في أعلى الكارت مباشرة */}
+              <div style={{ background: '#000', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
+                <video 
+                  src={video.url} 
+                  controls 
+                  playsInline
+                  preload="metadata"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                >
+                  متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+              </div>
+
+              {/* ب) تفاصيل ونص الكارت بالأسفل */}
+              <div style={{ padding: '20px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
                   {video.title}
                 </h3>
-                <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: '1.6', margin: '0' }}>
+                
+                <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '5px', lineHeight: '1.6', margin: '0' }}>
                   {video.description}
                 </p>
               </div>
@@ -66,9 +78,16 @@ const Home = () => {
             </div>
           ))}
         </div>
-      </main>
+      </div>
+
+      {/* 4. قسم الواجبات المدمج */}
+      <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+        <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
+          📝 قـسـم الـواجبـات والـتدريـبـات
+        </h2>
+        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز استقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
+      </div>
+
     </div>
   );
-};
-
-export default Home;
+}
