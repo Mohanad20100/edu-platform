@@ -8,14 +8,14 @@ export default function Home() {
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', direction: 'rtl', fontFamily: 'Arial, sans-serif' }}>
       
       {/* 1. قسم الترحيب الرئيسي */}
-      <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
+    <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
         </h1>
         <p style={{ color: '#475569', fontSize: '1.2rem' }}>
           مكانك الأول لتلقي الشروحات المبسطة ومتابعة تقدمك الدراسي بكل سهولة وإتقان.
         </p>
-      </div>
+    </div>
 
       {/* 2. عرض الصورة الترحيبية */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
