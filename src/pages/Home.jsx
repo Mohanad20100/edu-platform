@@ -1,7 +1,7 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
 // 📥 استدعاء بيانات الفيديوهات الترحيبية من ملف الـ JSON داخل مجلد data
-import videoData from './data/videos.json';
+import videoData from '../data/videos.json';
 
 export default function Home() {
   return (
