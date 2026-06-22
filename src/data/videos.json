@@ -1,22 +1,14 @@
 [
   {
-    "title": "المحاضرة الاولي- مقدمة فى تكنولوجيا التعليم - كلية تربية - قسم تكنولوجيا التعليم",
-    "channel_name": "نيو أكاديمي جامعات ومعاهد",
-    "video_id": "SZDRYgQnlEE",
-    "url": "http://www.youtube.com/watch?v=SZDRYgQnlEE",
-    "publish_date": "2025-03-09",
-    "view_count": 181,
-    "like_count": 4,
-    "video_length": "PT22M7S"
+    "id": 1,
+    "title": "المحاضرة الأولى - مقدمة في تكنولوجيا التعليم",
+    "url": "https://www.youtube.com/embed/SZDRYgQnlEE",
+    "description": "كلية تربية - قسم تكنولوجيا التعليم (قناة نيو أكاديمي جامعات ومعاهد)."
   },
   {
-    "title": "مقدمة عن صعوبات التعلم - Introduction to Learning Difficulties",
-    "channel_name": "منصة التعليم الالكتروني    First Edugate",
-    "video_id": "4J8SSbrD3WA",
-    "url": "http://www.youtube.com/watch?v=4J8SSbrD3WA",
-    "publish_date": "2024-09-21",
-    "view_count": 51,
-    "like_count": 0,
-    "video_length": "PT2M1S"
+    "id": 2,
+    "title": "مقدمة عن صعوبات التعلم",
+    "url": "https://www.youtube.com/embed/4J8SSbrD3WA",
+    "description": "Introduction to Learning Difficulties (منصة التعليم الإلكتروني First Edugate)."
   }
 ]
