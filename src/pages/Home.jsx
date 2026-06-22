@@ -1,6 +1,6 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
-// 📥 استدعاء بيانات الفيديوهات الترحيبية من ملف الـ JSON داخل مجلد data
+// 📥 استدعاء بيانات الفيديوهات من المسار الصحيح
 import videoData from '../data/videos.json';
 
 export default function Home() {
@@ -8,14 +8,14 @@ export default function Home() {
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', direction: 'rtl', fontFamily: 'Arial, sans-serif' }}>
       
       {/* 1. قسم الترحيب الرئيسي */}
-    <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
+      <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
         </h1>
         <p style={{ color: '#475569', fontSize: '1.2rem' }}>
           مكانك الأول لتلقي الشروحات المبسطة ومتابعة تقدمك الدراسي بكل سهولة وإتقان.
         </p>
-    </div>
+      </div>
 
       {/* 2. عرض الصورة الترحيبية */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات المباشرة المجلوبة من ملف الـ JSON */}
+      {/* 3. قسم الفيديوهات المجلوبة من ملف الـ JSON */}
       <div style={{ marginTop: '50px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '25px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -51,22 +51,21 @@ export default function Home() {
                 flexDirection: 'column'
               }}
             >
-              {/* أ) مشغل الفيديو في أعلى الكارت مباشرة */}
+              {/* أ) مشغل يوتيوب (iframe) في أعلى الكارت */}
               <div style={{ background: '#000', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-                <video 
-                  src={video.url} 
-                  controls 
-                  playsInline
-                  preload="metadata"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                >
-                  متصفحك لا يدعم تشغيل الفيديو.
-                </video>
+                <iframe
+                  src={video.url}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{ width: '100%', height: '100%', display: 'block' }}
+                ></iframe>
               </div>
 
               {/* ب) تفاصيل ونص الكارت بالأسفل */}
               <div style={{ padding: '20px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
                   {video.title}
                 </h3>
                 
