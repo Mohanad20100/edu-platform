@@ -1,14 +1,22 @@
 [
   {
-    "id": 1,
-    "title": "نصائح ذكية لتنظيم الوقت والدراسة",
-    "url": "https://res.cloudinary.com/dmo7v6g6w/video/upload/v1718894000/study1.mp4",
-    "description": "فيديو إرشادي مميز يساعد الطلاب على ترتيب أولوياتهم اليومية وتنظيم ساعات المذاكرة."
+    "title": "المحاضرة الاولي- مقدمة فى تكنولوجيا التعليم - كلية تربية - قسم تكنولوجيا التعليم",
+    "channel_name": "نيو أكاديمي جامعات ومعاهد",
+    "video_id": "SZDRYgQnlEE",
+    "url": "http://www.youtube.com/watch?v=SZDRYgQnlEE",
+    "publish_date": "2025-03-09",
+    "view_count": 181,
+    "like_count": 4,
+    "video_length": "PT22M7S"
   },
   {
-    "id": 2,
-    "title": "كيف تذاكر بذكاء وتتفوق؟",
-    "url": "https://res.cloudinary.com/dmo7v6g6w/video/upload/v1718894000/study2.mp4",
-    "description": "استراتيجيات عملية مجربة لتحسين الحفظ والفهم السريع للمناهج الدراسية الدراسية."
+    "title": "مقدمة عن صعوبات التعلم - Introduction to Learning Difficulties",
+    "channel_name": "منصة التعليم الالكتروني    First Edugate",
+    "video_id": "4J8SSbrD3WA",
+    "url": "http://www.youtube.com/watch?v=4J8SSbrD3WA",
+    "publish_date": "2024-09-21",
+    "view_count": 51,
+    "like_count": 0,
+    "video_length": "PT2M1S"
   }
 ]
