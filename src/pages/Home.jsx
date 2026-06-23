@@ -1,13 +1,13 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
-// 📥 استدعاء بيانات الفيديوهات الترحيبية المباشرة من ملف الـ JSON
+// 📥 استدعاء بيانات الفيديوهات الترحيبية من المسار الصحيح (تأكد من استخدام النقطتين ../ للرجوع للخلف)
 import videoData from '../data/videos.json';
 
 export default function Home() {
   return (
     <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', direction: 'rtl', fontFamily: 'Arial, sans-serif' }}>
       
-      {/* 1. قسم الترحيب الرئيسي */}
+      {/* 1. قسم الترحيب الرئيسي للمنصة */}
       <div style={{ background: '#f1f5f9', padding: '30px', borderRadius: '12px', textAlign: 'center', marginBottom: '30px' }}>
         <h1 style={{ fontSize: '2.2rem', color: '#1e293b', marginBottom: '15px' }}>
           مرحباً بك في منصتك التعليمية المتكاملة 🎓
@@ -17,7 +17,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* 2. عرض الصورة الترحيبية */}
+      {/* 2. عرض الصورة الترحيبية للموقع */}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '40px' }}>
         <img 
           src={projectCapture} 
@@ -26,17 +26,17 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات المباشرة المجلوبة من ملف الـ JSON */}
+      {/* 3. قسم كروت الفيديوهات المجلوبة تلقائياً من ملف الـ JSON */}
       <div style={{ marginTop: '50px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '25px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
         </h2>
         
-        {/* الحاوية الرئيسية للكروت */}
+        {/* الحاوية المرنة لترتيب الكروت بجانب بعضها */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px', justifyContent: 'center', padding: '10px' }}>
           {videoData.map((video) => (
             
-            /* 📦 كارت الفيديو المنفصل */
+            /* 📦 كارت الفيديو المنفصل بتصميمه الجديد */
             <div 
               key={video.id} 
               style={{ 
@@ -66,9 +66,28 @@ export default function Home() {
 
               {/* ب) تفاصيل ونص الكارت بالأسفل */}
               <div style={{ padding: '20px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
+                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
                   {video.title}
                 </h3>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '5px', lineHeight: '1.6', margin: '0' }}>
-                  {video
+                  {video.description}
+                </p>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 4. قسم الواجبات والتدريبات المدمج */}
+      <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+        <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
+          📝 قـسـم الـواجبـات والـتدريـبـات
+        </h2>
+        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز استقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
+      </div>
+
+    </div>
+  );
+}
