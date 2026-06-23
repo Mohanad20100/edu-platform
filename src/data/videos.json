@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "title": "المحاضرة الأولى - مقدمة في تكنولوجيا التعليم",
-    "url": "https://www.youtube.com/embed/SZDRYgQnlEE",
-    "description": "كلية تربية - قسم تكنولوجيا التعليم (قناة نيو أكاديمي جامعات ومعاهد)."
+    "title": "فيديو ترحيبي بالطلاب وبداية العام الدراسي الجديد",
+    "url": "https://assets.mixkit.co/videos/preview/mixkit-welcome-back-to-school-message-on-blackboard-42352-large.mp4",
+    "description": "كلمة ترحيبية خاصة بطلابنا الأبطال للتحفيز والاستعداد لرحلة النجاح والتفوق داخل المنصة."
   },
   {
     "id": 2,
-    "title": "مقدمة عن صعوبات التعلم",
-    "url": "https://www.youtube.com/embed/4J8SSbrD3WA",
-    "description": "Introduction to Learning Difficulties (منصة التعليم الإلكتروني First Edugate)."
+    "title": "جولة تعريفية داخل المنصة وكيفية تحقيق الاستفادة القصوى",
+    "url": "https://assets.mixkit.co/videos/preview/mixkit-animation-of-a-welcome-sign-with-balloons-43187-large.mp4",
+    "description": "فيديو توضيحي يرحب بالطلاب ويشرح لهم كيفية متابعة الدروس والواجبات والتفاعل مع المعلم."
   }
 ]
