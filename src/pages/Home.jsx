@@ -1,6 +1,6 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
-// 📥 استدعاء بيانات الفيديوهات من المسار الصحيح
+// 📥 استدعاء بيانات الفيديوهات الترحيبية المباشرة من ملف الـ JSON
 import videoData from '../data/videos.json';
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 3. قسم الفيديوهات المجلوبة من ملف الـ JSON */}
+      {/* 3. قسم الفيديوهات المباشرة المجلوبة من ملف الـ JSON */}
       <div style={{ marginTop: '50px' }}>
         <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '25px', textAlign: 'center' }}>
           🎥 فيديوهات تحفيزية وإرشادية للبداية
@@ -51,42 +51,24 @@ export default function Home() {
                 flexDirection: 'column'
               }}
             >
-              {/* أ) مشغل يوتيوب (iframe) في أعلى الكارت */}
+              {/* أ) مشغل الفيديو المباشر (.mp4) في أعلى الكارت */}
               <div style={{ background: '#000', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
-                <iframe
-                  src={video.url}
-                  title={video.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{ width: '100%', height: '100%', display: 'block' }}
-                ></iframe>
+                <video 
+                  src={video.url} 
+                  controls 
+                  playsInline
+                  preload="metadata"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                >
+                  متصفحك لا يدعم تشغيل الفيديو.
+                </video>
               </div>
 
               {/* ب) تفاصيل ونص الكارت بالأسفل */}
               <div style={{ padding: '20px', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <h3 style={{ fontSize: '1.1rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '10px', color: '#1e293b', fontWeight: '700', lineHeight: '1.4' }}>
                   {video.title}
                 </h3>
                 
                 <p style={{ fontSize: '0.9rem', color: '#64748b', marginTop: '5px', lineHeight: '1.6', margin: '0' }}>
-                  {video.description}
-                </p>
-              </div>
-
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 4. قسم الواجبات المدمج */}
-      <div style={{ marginTop: '60px', background: '#fff', padding: '25px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-        <h2 style={{ fontSize: '1.8rem', color: '#0f172a', marginBottom: '20px', textAlign: 'center' }}>
-          📝 قـسـم الـواجبـات والـتدريـبـات
-        </h2>
-        <p style={{ textAlign: 'center', color: '#64748b' }}>جاهز استقبال التدريبات والأسئلة الخاصة بك قريباً!</p>
-      </div>
-
-    </div>
-  );
-}
+                  {video
