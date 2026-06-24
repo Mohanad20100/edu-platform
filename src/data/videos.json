@@ -1,14 +1,12 @@
 [
   {
     "id": 1,
-    "title": "مرحباً بكم يا شباب في بداية رحلتنا التعليمية 🎓",
-    "url": "https://assets.mixkit.co/videos/preview/mixkit-welcome-back-to-school-message-on-blackboard-42352-large.mp4",
-    "description": "فيديو ترحيبي خاص بطلابنا الأبطال للتحفيز والاستعداد لرحلة النجاح والتفوق داخل المنصة."
+    "title": "مقدمة في البرمجة",
+    "url": "https://www.youtube.com/watch?v=example1"
   },
   {
     "id": 2,
-    "title": "جولة إرشادية: كيف تحقق الاستفادة القصوى من المنصة؟",
-    "url": "https://assets.mixkit.co/videos/preview/mixkit-animation-of-a-welcome-sign-with-balloons-43187-large.mp4",
-    "description": "فيديو توضيحي يرحب بالطلاب ويشرح لهم كيفية متابعة الدروس والواجبات والتفاعل مع المعلم."
+    "title": "تعلم React",
+    "url": "https://www.youtube.com/watch?v=example2"
   }
 ]
