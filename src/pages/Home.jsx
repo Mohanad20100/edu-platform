@@ -1,7 +1,7 @@
 import React from 'react';
 import projectCapture from '../assets/project-capture.png'; 
 // 📥 الاستدعاء الصحيح والمباشر لملف الفيديوهات باستخدام (../) للخروج من مجلد pages
-import videoData from '../data/videos.json';
+import videoData from 'src/data/videos.json';
 
 export default function Home() {
   return (
