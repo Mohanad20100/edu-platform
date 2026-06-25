@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import videoData from '../data/videos.json';
 const Home = () => {
   const [videos, setVideos] = useState([]);
 
