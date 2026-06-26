@@ -1,1 +1,20 @@
-
+[
+  {
+    "id": 1,
+    "title": "ركز على هدفك.. المجموع بين يديك! 🎯",
+    "image_url": "https://replicate.delivery/xpbkg/f12e8b2b-42e8-4601-8b22-83568a0a149c/output.png",
+    "description": "استغل كل دقيقة، فكل دقيقة تقربك من حلمك. أنت قدها!"
+  },
+  {
+    "id": 2,
+    "title": "التفوق ينتظرك.. لا تتوقف! 🌟",
+    "image_url": "http://googleusercontent.com/image_collection/image_retrieval/8944157661565706159_0",
+    "description": "النجاح الحقيقي هو أن تتجاوز توقعات نفسك."
+  },
+  {
+    "id": 3,
+    "title": "نذاكر سوا.. ننجح سوا! 🤝",
+    "image_url": "http://googleusercontent.com/image_collection/image_retrieval/913449208721565041_0",
+    "description": "التعلم المستمر هو سر التميز والإبداع."
+  }
+]
